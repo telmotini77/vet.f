@@ -1,0 +1,10 @@
+<div class="page-container">
+  <h2>Perfil</h2>
+  <div *ngIf="auth.user; else noUser">
+    <p><strong>Email:</strong> {{ auth.user.email }}</p>
+    <p><strong>Rol:</strong> {{ auth.user.rol }}</p>
+  </div>
+  <ng-template #noUser>
+    <p>No hay usuario autenticado.</p>
+  </ng-template>
+</div>

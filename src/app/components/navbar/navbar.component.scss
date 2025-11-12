@@ -1,0 +1,24 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.navbar-links a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #333;
+}
+
+.navbar-user {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.logout-button-nav {
+  padding: 0.25rem 0.5rem;
+}

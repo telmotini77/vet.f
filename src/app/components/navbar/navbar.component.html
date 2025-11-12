@@ -1,0 +1,22 @@
+<nav class="navbar">
+  <a routerLink="/" class="navbar-brand">Piensa Veterinaria</a>
+
+  <div class="navbar-links">
+    <ng-container *ngIf="auth.isAuthenticated(); else anonLinks">
+      <a routerLink="/mis-mascotas">Mis Mascotas</a>
+      <a routerLink="/profile">Perfil</a>
+      <a routerLink="/contactos">Contactos</a>
+      <a *ngIf="auth.user?.rol === 'admin'" routerLink="/admin-dashboard">Panel Admin</a>
+
+      <div class="navbar-user">
+        <span>{{ auth.user?.email }} ({{ auth.user?.rol }})</span>
+        <button (click)="logout()" class="logout-button-nav">Cerrar Sesión</button>
+      </div>
+    </ng-container>
+
+    <ng-template #anonLinks>
+      <a routerLink="/login">Login</a>
+      <a routerLink="/register">Registro</a>
+    </ng-template>
+  </div>
+</nav>

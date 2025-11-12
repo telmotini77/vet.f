@@ -1,0 +1,12 @@
+<div class="mascota-card-horizontal">
+  <div class="mascota-card-imagen-horizontal">
+    <ng-container *ngIf="imagenPrincipal; else noImg">
+      <img [src]="imagenPrincipal" [alt]="mascota.nombre" />
+    </ng-container>
+    <ng-template #noImg>🐾</ng-template>
+  </div>
+  <div class="mascota-card-info-horizontal">
+    <h3>{{ mascota.nombre }}</h3>
+    <p>{{ mascota.especie }} - {{ mascota.raza }}</p>
+  </div>
+</div>
